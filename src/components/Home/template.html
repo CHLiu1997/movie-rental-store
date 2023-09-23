@@ -21,21 +21,21 @@
     </ul>
   </div>
   <div class="content">
-    <div class="slideshow">
-      <div class="slide_item">
+    <div class="slideshow-container">
+      <div class="mySlides fade">
         <img src="https://picsum.photos/1920/400?random=1" alt="">
         <div>電影1</div>
       </div>
-      <!-- <div class="slide_item">
+      <div class="mySlides fade">
         <img src="https://picsum.photos/1920/400?random=2" alt="">
         <div>電影2</div>
       </div>
-      <div class="slide_item">
+      <div class="mySlides fade">
         <img src="https://picsum.photos/1920/400?random=3" alt="">
         <div>電影3</div>
-      </div> -->
-      <a class="slide_arrow prev">&#10094;</a>
-      <a class="slide_arrow next">&#10095;</a>
+      </div>
+      <a class="slide_arrow prev" @click="prevSlide">&#10094;</a>
+      <a class="slide_arrow next" @click="nextSlide">&#10095;</a>
     </div>
     <div>
       <div class="slide_dot">
