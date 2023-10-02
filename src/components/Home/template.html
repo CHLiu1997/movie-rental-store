@@ -1,51 +1,66 @@
 <div class="container">
-  <div class="header">
+  <header class="header">
     <ul class="list-btn">
       <li class="line-absolute">
         <a class="home-btn" href="#">首頁</a>
       </li>
       <li class="line-absolute">
-        <a class="movie-btn" href="">電影</a>
+        <a class="movie-btn" href="#">電影類型</a>
       </li>
-      <li class="line-absolute">
+      <!-- <li class="line-absolute">
         <a class="album-btn" href="">影集</a>
-      </li>
+      </li> -->
+      <div class="dropdown">
+        <button class="dropbtn">選擇選項</button>
+        <div class="dropdown-content">
+          <a href="page1.html">選項1</a>
+          <a href="page2.html">選項2</a>
+          <a href="page3.html">選項3</a>
+        </div>
+      </div>
     </ul>
     <ul class="list-btn">
       <li class="line-absolute">
-        <a class="cart-btn" href="">購物車</a>
+        <a class="cart-btn" href="#">購物車</a>
       </li>
       <li class="line-absolute">
-        <a class="login-btn" href="">登入</a>
+        <a class="login-btn" href="#">登入</a>
       </li>
     </ul>
-  </div>
-  <div class="content">
-    <div class="slideshow-container">
-      <div class="mySlides fade">
-        <img src="https://picsum.photos/1920/400?random=1" alt="">
-        <div>電影1</div>
-      </div>
-      <div class="mySlides fade">
-        <img src="https://picsum.photos/1920/400?random=2" alt="">
-        <div>電影2</div>
-      </div>
-      <div class="mySlides fade">
-        <img src="https://picsum.photos/1920/400?random=3" alt="">
-        <div>電影3</div>
-      </div>
-      <a class="slide_arrow prev" @click="prevSlide">&#10094;</a>
-      <a class="slide_arrow next" @click="nextSlide">&#10095;</a>
-    </div>
-    <div>
-      <div class="slide_dot">
-        <div class="dot" data-value="1"></div>
-        <div class="dot" data-value="2"></div>
-        <div class="dot" data-value="3"></div>
-      </div>
-    </div>
-  </div>
-  <div class="footer">
+  </header>
+  <main class="content">
+    <Splide :options="{ rewind: true }" aria-label="My Favorite Images">
+      <SplideSlide>
+        <img src="https://picsum.photos/1920/400?random=1" alt="hot 1">
+      </SplideSlide>
+      <SplideSlide>
+        <img src="https://picsum.photos/1920/400?random=2" alt="hot 2">
+      </SplideSlide>
+      <SplideSlide>
+        <img src="https://picsum.photos/1920/400?random=3" alt="hot 3">
+      </SplideSlide>
+      <SplideSlide>
+        <img src="https://picsum.photos/1920/400?random=4" alt="hot 4">
+      </SplideSlide>
+    </Splide>
+    <article>
+      <ul class="movie-categories">
+        <li class="category Action">
+          <a class="category-btn" href="#">動作</a>
+        </li>
+        <li class="category Horror">
+          <a class="category-btn" href="#">恐怖</a>
+        </li>
+        <li class="category Comedy">
+          <a class="category-btn" href="#">喜劇</a>
+        </li>
+        <li class="category Romance">
+          <a class="category-btn" href="#">愛情</a>
+        </li>
+      </ul>
+    </article>
+  </main>
+  <footer class="footer">
     
     <div class="community">
       <a href="#"><img class="community-btn" src="./twitter.png" alt="twitter"></a>| 
@@ -58,5 +73,5 @@
         本站為單純的作品練習，不使用於任何商業或營利行為
       </p>
     </div>
-  </div>
+  </footer>
 </div>

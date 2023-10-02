@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #424242;
 }
 /* Header */
 .header {
@@ -10,6 +11,7 @@
   justify-content: space-between;
   height: 80px;
   width: 100%;
+  background-color: #f0f0f0;
   border-bottom: 1px solid #424242;
 }
 .list-btn {
@@ -28,12 +30,12 @@
   margin: 0 20px;
   text-decoration: none;
 }
-.album-btn {
+/* .album-btn {
   font-size: 20px;
   color: #424242;
   margin: 0 20px;
   text-decoration: none;
-}
+} */
 .cart-btn {
   font-size: 20px;
   color: #424242;
@@ -66,8 +68,9 @@
 .footer {
   display: flex;
   flex-direction: column;
-  color: #ffffff;
+  color: #f0f0f0;
   background-color: #424242;
+  border-top: 1px solid #f0f0f0;
 }
 .community {
   display: flex;
@@ -83,64 +86,49 @@
   line-height: 2;
   padding-bottom: 10px;
 }
-/* Slideshow container */
-.slideshow-container {
-  position: relative;
-}
-/* .mySlides {
-  display: none;
-} */
-.slide_arrow {
-  position: absolute;
-  padding: 20px;
-  font-size: 20px;
-  color: #ffffff;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: 0.5s ease;
-}
-.prev {
-  left: 0;
-}
-.next {
-  right: 0;
-}
-.slide_arrow:hover {
-  border-radius: 5px;
-  cursor: pointer;
-  background: rgba(0, 0, 0, 0.7);
-}
-.dot {
-  width: 10px;
-  height: 10px;
-  margin: 0 3px;
-  background: rgba(0, 0, 0, 0.4);
-  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.4);
-  border-radius: 50%;
-  transition: 0.6s;
-}
-.dot:hover {
-  cursor: pointer;
-  background: rgba(0, 0, 0, 0.6);
-  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.6);
-}
-.active{
-  background: rgba(0, 0, 0, 0.6);
-  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.6);
-}
-.slide_dot {
-  position: absolute;
+/* article */
+.movie-categories {
   display: flex;
-  left: 50%;
-  transform: translate(-50%, -35px);
+  justify-content: space-evenly;
+  height: 300px;
+  margin: 20px 0;
 }
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+.category {
+  position: relative;
+  height: 100%;
+  width: 23%;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  background-size: cover;
 }
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+.Action {
+  background-image: url("https://picsum.photos/400/400?random=1");
+}
+.Horror {
+  background-image: url("https://picsum.photos/400/400?random=2");
+}
+.Comedy {
+  background-image: url("https://picsum.photos/400/400?random=3");
+}
+.Romance {
+  background-image: url("https://picsum.photos/400/400?random=4");
+}
+.category-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  height: 40px;
+  width: 80px;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #ff2d2d;
+  border-radius: 5px 0 10px 0;
+}
+.category-btn:hover {
+  background-color: #ff5151;
 }
