@@ -7,6 +7,20 @@ export default {
     Splide,
     SplideSlide,
   },
+  data() {
+    return {
+      isDropdownVisible: false,
+      timeoutId: null,
+    };
+  },
+  methods: {
+    showDropdown() {
+      this.isDropdownVisible = true;
+    },
+    hideDropdown() {
+      this.isDropdownVisible = false;
+    },
+  },
 };
 </script>
 <template src="./template.html"></template>

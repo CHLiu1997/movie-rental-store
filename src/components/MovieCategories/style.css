@@ -86,49 +86,25 @@
   line-height: 2;
   padding-bottom: 10px;
 }
-/* article */
-.movie-categories {
+/* Main */
+.main {
   display: flex;
-  justify-content: space-evenly;
-  height: 300px;
-  margin: 20px 0;
+  height: 500px;
 }
-.category {
-  position: relative;
-  height: 100%;
-  width: 23%;
-  border: 1px solid #d0d0d0;
-  border-radius: 10px;
-  background-size: cover;
-}
-.Horror {
-  background-image: url("https://picsum.photos/400/400?random=1");
-}
-.Romance {
-  background-image: url("https://picsum.photos/400/400?random=2");
-}
-.Classic {
-  background-image: url("https://picsum.photos/400/400?random=3");
-}
-.Action {
-  background-image: url("https://picsum.photos/400/400?random=4");
-}
-.category-btn{
+.left-side {
+  width: 20%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  right: 0%;
-  bottom: 0%;
-  height: 40px;
-  width: 80px;
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #ff2d2d;
-  border-radius: 5px 0 10px 0;
+  /* background-color: aqua; */
 }
-.category-btn:hover {
-  background-color: #ff5151;
+.right-side {
+  width: 80%;
+  background-color:brown;
+}
+.categories-column {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5dc;
 }

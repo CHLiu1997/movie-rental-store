@@ -26,36 +26,21 @@
       </li>
     </ul>
   </header>
-  <main>
-    <Splide :options="{ rewind: true }" aria-label="My Favorite Images">
-      <SplideSlide>
-        <img src="https://picsum.photos/1920/400?random=1" alt="hot 1">
-      </SplideSlide>
-      <SplideSlide>
-        <img src="https://picsum.photos/1920/400?random=2" alt="hot 2">
-      </SplideSlide>
-      <SplideSlide>
-        <img src="https://picsum.photos/1920/400?random=3" alt="hot 3">
-      </SplideSlide>
-      <SplideSlide>
-        <img src="https://picsum.photos/1920/400?random=4" alt="hot 4">
-      </SplideSlide>
-    </Splide>
-    <section>
-      <ul class="movie-categories">
-        <li class="category Horror">
-          <a class="category-btn" href="#">恐怖</a>
-        </li>
-        <li class="category Romance">
-          <a class="category-btn" href="#">浪漫</a>
-        </li>
-        <li class="category Classic">
-          <a class="category-btn" href="#">經典</a>
-        </li>
-        <li class="category Action">
-          <a class="category-btn" href="#">動作</a>
-        </li>
+  <main class="main">
+    <section class="left-side">
+      <ul class="categories-column">
+        <li>全部</li>
+        <li>恐怖</li>
+        <li>浪漫</li>
+        <li>經典</li>
+        <li>動作</li>
+        <li>動漫</li>
+        <li>劇情</li>
+        <li>喜劇</li>
       </ul>
+    </section>
+    <section class="right-side">
+      <div class="movie"></div>
     </section>
   </main>
   <footer class="footer">
