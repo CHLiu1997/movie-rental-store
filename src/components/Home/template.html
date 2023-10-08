@@ -1,10 +1,10 @@
 <div class="container">
   <header class="header">
     <a class="navigation-bar home-btn" href="#">
-      <h1 class="text-gradient">JUST<br>WATCH</h1>
+      <h1 class="text-gradient">JUST<br />WATCH</h1>
     </a>
     <ul class="navigation-bar">
-      <li @mouseenter="showDropdown" @mouseleave="hideDropdown"> 
+      <li @mouseenter="showDropdown" @mouseleave="showDropdown">
         <a class="navigation-bar-btn border-box" href="#">電影分類</a>
         <div class="dropdown-box" v-if="isDropdownVisible">
           <a class="dropdown-content first-dropdown" href="#">恐怖</a>
@@ -35,16 +35,16 @@
     </section>
     <Splide :options="{ rewind: true }" aria-label="My Favorite Images">
       <SplideSlide>
-        <img src="https://picsum.photos/1920/400?random=1" alt="hot 1">
+        <img src="https://picsum.photos/1920/400?random=1" alt="hot 1" />
       </SplideSlide>
       <SplideSlide>
-        <img src="https://picsum.photos/1920/400?random=2" alt="hot 2">
+        <img src="https://picsum.photos/1920/400?random=2" alt="hot 2" />
       </SplideSlide>
       <SplideSlide>
-        <img src="https://picsum.photos/1920/400?random=3" alt="hot 3">
+        <img src="https://picsum.photos/1920/400?random=3" alt="hot 3" />
       </SplideSlide>
       <SplideSlide>
-        <img src="https://picsum.photos/1920/400?random=4" alt="hot 4">
+        <img src="https://picsum.photos/1920/400?random=4" alt="hot 4" />
       </SplideSlide>
     </Splide>
     <section class="category-box">
@@ -73,16 +73,16 @@
       <div class="subscribe monthly">
         <p class="subscribe-text">
           基本方案(月)
-          <br>
-          <span style="font-size: 24px;">NT&#36;</span>&nbsp;188
+          <br />
+          <span style="font-size: 24px">NT&#36;</span>&nbsp;188
         </p>
         <a class="subscribe-btn" href="#">訂閱</a>
       </div>
       <div class="subscribe yearly">
         <p class="subscribe-text">
           超值方案(年)
-          <br>
-          <span style="font-size: 24px;">NT&#36;</span>&nbsp;1,888
+          <br />
+          <span style="font-size: 24px">NT&#36;</span>&nbsp;1,888
         </p>
         <a class="subscribe-btn" href="#">訂閱</a>
       </div>
@@ -90,13 +90,19 @@
   </main>
   <footer class="footer">
     <div class="community">
-      <a href="#"><img class="community-btn" src="./twitter1.png" alt="twitter"></a>| 
-      <a href="#"><img class="community-btn" src="./facebook.png" alt="facebook"></a>|
-      <a href="#"><img class="community-btn" src="./instagram.png" alt="instagram"></a>
+      <a href="#"
+        ><img class="community-btn" src="./twitter1.png" alt="twitter" /></a
+      >|
+      <a href="#"
+        ><img class="community-btn" src="./facebook.png" alt="facebook" /></a
+      >|
+      <a href="#"
+        ><img class="community-btn" src="./instagram.png" alt="instagram"
+      /></a>
     </div>
-    <div class="copyright"> 
+    <div class="copyright">
       <p>
-        &copy; Copyright 2023 <br>
+        &copy; Copyright 2023 <br />
         本站為單純的作品練習，不使用於任何商業或營利行為
       </p>
     </div>
