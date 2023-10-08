@@ -1,32 +1,38 @@
 <div class="container">
   <header class="header">
+    <a class="navigation-bar home-btn" href="#">
+      <h1 class="text-gradient">JUST<br>WATCH</h1>
+    </a>
     <ul class="navigation-bar">
-      <li>
-        <a class="navigation-bar-btn" href="#">首頁</a>
-      </li>
-      <li class="test" @mouseenter="showDropdown" @mouseleave="hideDropdown"> 
-        <a class="navigation-bar-btn" href="#">電影類型</a>
+      <li @mouseenter="showDropdown" @mouseleave="hideDropdown"> 
+        <a class="navigation-bar-btn border-box" href="#">電影分類</a>
         <div class="dropdown-box" v-if="isDropdownVisible">
-          <a class="dropdown-content" href="https://www.youtube.com/">恐怖</a>
+          <a class="dropdown-content first-dropdown" href="#">恐怖</a>
           <a class="dropdown-content" href="#">浪漫</a>
           <a class="dropdown-content" href="#">經典</a>
           <a class="dropdown-content" href="#">動作</a>
           <a class="dropdown-content" href="#">動漫</a>
           <a class="dropdown-content" href="#">劇情</a>
-          <a class="dropdown-content" href="#">喜劇</a>
+          <a class="dropdown-content last-dropdown" href="#">喜劇</a>
         </div>
       </li>
-    </ul>
-    <ul class="navigation-bar">
       <li>
-        <a class="navigation-bar-btn" href="#">購物車</a>
+        <a class="navigation-bar-btn border-box" href="#">購物車</a>
       </li>
       <li>
-        <a class="navigation-bar-btn" href="#">登入</a>
+        <a class="navigation-bar-btn border-box" href="#">登入</a>
       </li>
     </ul>
   </header>
   <main>
+    <section class="ad-box">
+      <div class="ad-content">
+        <h2 class="ad-title text-gradient">JUST WATCH</h2>
+        <p class="ad-slogan">最精彩的電影&nbsp;提供您最豐富的選擇</p>
+        <p class="ad-slogan">盡在JUST WATCH</p>
+        <a class="ad-btn" href="#">訂閱</a>
+      </div>
+    </section>
     <Splide :options="{ rewind: true }" aria-label="My Favorite Images">
       <SplideSlide>
         <img src="https://picsum.photos/1920/400?random=1" alt="hot 1">
@@ -41,27 +47,50 @@
         <img src="https://picsum.photos/1920/400?random=4" alt="hot 4">
       </SplideSlide>
     </Splide>
-    <section>
-      <ul class="movie-categories">
-        <li class="category Horror">
-          <a class="category-btn" href="#">恐怖</a>
-        </li>
-        <li class="category Romance">
-          <a class="category-btn" href="#">浪漫</a>
-        </li>
-        <li class="category Classic">
-          <a class="category-btn" href="#">經典</a>
-        </li>
-        <li class="category Action">
-          <a class="category-btn" href="#">動作</a>
-        </li>
-      </ul>
+    <section class="category-box">
+      <div class="category-bg">
+        <a class="category Horror" href="#">
+          <p class="category-text">恐怖</p>
+        </a>
+      </div>
+      <div class="category-bg">
+        <a class="category Romance">
+          <p class="category-text">浪漫</p>
+        </a>
+      </div>
+      <div class="category-bg">
+        <a class="category Classic">
+          <p class="category-text">經典</p>
+        </a>
+      </div>
+      <div class="category-bg">
+        <a class="category Action">
+          <p class="category-text">動作</p>
+        </a>
+      </div>
+    </section>
+    <section class="subscribe-box">
+      <div class="subscribe monthly">
+        <p class="subscribe-text">
+          基本方案(月)
+          <br>
+          <span style="font-size: 24px;">NT&#36;</span>&nbsp;188
+        </p>
+        <a class="subscribe-btn" href="#">訂閱</a>
+      </div>
+      <div class="subscribe yearly">
+        <p class="subscribe-text">
+          超值方案(年)
+          <br>
+          <span style="font-size: 24px;">NT&#36;</span>&nbsp;1,888
+        </p>
+        <a class="subscribe-btn" href="#">訂閱</a>
+      </div>
     </section>
   </main>
   <footer class="footer">
-    
     <div class="community">
-      <a href="#"><img class="community-btn" src="./twitter.png" alt="twitter"></a>| 
+      <a href="#"><img class="community-btn" src="./twitter1.png" alt="twitter"></a>| 
       <a href="#"><img class="community-btn" src="./facebook.png" alt="facebook"></a>|
       <a href="#"><img class="community-btn" src="./instagram.png" alt="instagram"></a>
     </div>

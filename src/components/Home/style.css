@@ -10,38 +10,39 @@
   justify-content: space-between;
   height: 80px;
   width: 100%;
-  background-color: #f0f0f0;
 }
 .navigation-bar {
   display: flex;
   align-items: center;
-  padding: 0 10px;
 }
-.test {
-  display: flex;
-  align-items: center;
-  height: 100%;
+.text-gradient {
+  color: transparent;
+  background: linear-gradient(135deg, #ae0000 25%, #b15bff);
+  background-clip: text;
 }
-.navigation-bar-btn {
-  display: inline-block;
-  position:relative;
-  font-size: 20px;
-  color: #424242;
-  margin: 0 30px;
+.home-btn {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 0 0 1rem;
   text-decoration: none;
 }
-.navigation-bar-btn::after{
-  content: "";
-  position: absolute;
-  right: 50%;
-  left: 50%;
-  bottom: -10px;
-  border-bottom: 2px solid #424242;
-  transition: .4s;
+.navigation-bar-btn {
+  font-size: 20px;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin-right: 30px;
+  color: #f0f0f0;
 }
-.navigation-bar-btn:hover::after{
-  right: -10%;
-  left: -10%;
+.border-box {
+  border: 2px solid transparent;
+  border-radius: 50rem;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(0deg, #000000, #000000), linear-gradient(135deg, #ae0000 25%, #b15bff);
+}
+.border-box:hover {
+  background-image: linear-gradient(135deg, #ae0000 25%, #b15bff);
 }
 /* Dropdown */
 .dropdown-box {
@@ -49,20 +50,28 @@
   flex-direction: column;
   position: absolute;
   top: 50px;
-  min-width: 140px; /* 要和 navigation-bar-btn 相等*/
-  margin-top: 20px;
-  background-color: #f0f0f0;
-  box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.3);
+  min-width: 144px;
+  margin-top: 15px;
+  background-color: #272727;
+  border: 1px solid #f0f0f0;
+  border-bottom: none;
+  border-radius: 5px;
   z-index: 1;
 }
 .dropdown-content {
   padding: 15px 0;
   font-size: 18px;
   text-decoration: none;
-  color: #424242;
+  color: #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.first-dropdown {
+  border-radius: 5px 5px 0 0;
+}
+.last-dropdown {
+  border-radius: 0 0 5px 5px;
 }
 .dropdown-content:hover {
-  color: #f0f0f0;
   background-color: #424242;
 }
 /* Footer */
@@ -72,6 +81,15 @@
   color: #f0f0f0;
   border-top: 1px solid #f0f0f0;
 }
+
+
+@media screen and (max-width: 768px) {
+  .footer {
+    display: none;
+  }
+}
+
+
 .community {
   display: flex;
   justify-content: center;
@@ -86,20 +104,94 @@
   line-height: 2;
   padding-bottom: 10px;
 }
-/* article */
-.movie-categories {
+/* Ad-box */
+.ad-box {
+  position: relative;
+  height: 600px;
+  background-color: rgba(0, 0, 0, 0.65);
+  background-image: url("https://picsum.photos/1920/600?random=1");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: multiply;
+  margin-bottom: 80px;
+}
+.ad-content {
+  position: absolute;
+  right: 5%;
+  bottom: 20%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ad-title {
+  font-size: 80px;
+  font-weight: bold;
+}
+.ad-slogan {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #f0f0f0;
+}
+.ad-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 160px;
+  margin-top: 5px;
+  font-weight: bold;
+  color: #f0f0f0;
+  border-radius: 50rem;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(135deg, #ae0000 25%, #b15bff);
+  text-decoration: none;
+}
+.ad-btn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: multiply;
+}
+/* Category-box */
+.category-box {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   height: 300px;
-  margin: 20px 0;
+  min-height: 300px;
+  margin: 80px 0;
+}
+.category-bg {
+  position: relative;
+  height: 90%;
+  min-width: 280px;
+  border-radius: 50px;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(135deg, #ae0000 25%, #b15bff);
 }
 .category {
-  position: relative;
+  position: absolute;
+  right: -8%;
+  bottom: -8%;
   height: 100%;
-  width: 23%;
-  border: 1px solid #d0d0d0;
-  border-radius: 10px;
+  width: 100%;
+  border-radius: 50px;
   background-size: cover;
+  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.3);
+}
+.category:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: multiply;
+}
+.category-text{
+  position: absolute;
+  right: 10%;
+  bottom: 8%;
+  font-size: 32px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #f0f0f0;
 }
 .Horror {
   background-image: url("https://picsum.photos/400/400?random=1");
@@ -113,22 +205,59 @@
 .Action {
   background-image: url("https://picsum.photos/400/400?random=4");
 }
-.category-btn{
+/* Subscribe-box */
+.subscribe-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  right: 0%;
-  bottom: 0%;
-  height: 40px;
-  width: 80px;
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #ff2d2d;
-  border-radius: 5px 0 10px 0;
+  margin-bottom: 80px;
 }
-.category-btn:hover {
-  background-color: #ff5151;
+.subscribe {
+  position: relative;
+  height: 350px;
+  width: 550px;
+  margin: 0 30px;
+  border-radius: 50px;
+  background-size: cover;
+}
+.monthly {
+  background-image: url("https://picsum.photos/500/300?random=1");
+}
+.yearly {
+  background-image: url("https://picsum.photos/500/300?random=2");
+}
+.subscribe:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: multiply;
+}
+.subscribe-text {
+  position: absolute;
+  left: 10%;
+  bottom: 17.5%;
+  font-size: 36px;
+  line-height: 1.3;
+  text-align: left;
+  font-weight: bold;
+  color: #f0f0f0;
+}
+.subscribe-btn {
+  position: absolute;
+  left: 10%;
+  bottom: 7.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 120px;
+  font-weight: bold;
+  color: #f0f0f0;
+  border-radius: 50rem;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(135deg, #ae0000 25%, #b15bff);
+  text-decoration: none;
+}
+.subscribe-btn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: multiply;
 }
