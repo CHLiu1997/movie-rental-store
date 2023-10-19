@@ -1,28 +1,43 @@
 <script>
 import { onMounted, ref } from "vue";
-import { Splide, SplideSlide } from "@splidejs/vue-splide";
-import "@splidejs/vue-splide/css/customize";
+import AOS from "aos";
+import "aos/dist/aos.css";
+// import { Splide, SplideSlide } from "@splidejs/vue-splide";
+// import "@splidejs/vue-splide/css/customize";
 
 const setup = () => {
-  const isDropdownVisible = ref(true);
-  const showDropdown = function () {
-    isDropdownVisible.value = !isDropdownVisible.value;
-  };
-
+  AOS.init();
+  AOS.refresh();
+  const loading = ref(true);
+  const yScrollValue = ref("");
   onMounted(() => {
-    console.log("onMounted");
+    setTimeout(() => {
+      loading.value = false;
+    }, 2000);
   });
+  // onMounted(() => {
+  //   window.addEventListener('scroll', this.scrollWatch);
+  // });
+  function scrollWatch() {
+    this.yScrollVaule = window.scrollY;
+  }
+  function goTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
   return {
-    isDropdownVisible,
-    showDropdown,
+    loading,
+    yScrollValue,
+    goTop,
+    scrollWatch,
   };
 };
 
 export default {
-  components: {
-    Splide,
-    SplideSlide,
-  },
+  // components: {
+  //   Splide,
+  //   SplideSlide,
+  // },
   setup,
 };
 </script>

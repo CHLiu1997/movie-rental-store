@@ -1,146 +1,187 @@
-<header class="header">
-  <a class="home" href="#">
-    <h1 class="text-gradient">JUST<br />WATCH</h1>
-  </a>
-  <ul class="nav">
-    <li>
-      <a class="nav-btn register" href="#">立即註冊</a>
-    </li>
-    <li>
-      <a class="nav-btn login" href="#">登入</a>
-    </li>
-  </ul>
-</header>
-<section class="ad-box">
-  <div class="ad-content">
-    <h2 class="ad-title text-gradient">JUST WATCH</h2>
-    <p class="ad-slogan">精彩的電影</p>
-    <p class="ad-slogan">各式各樣的選擇</p>
-    <p class="ad-slogan">盡在&nbsp;JUST&nbsp;WATCH</p>
-    <ul class="subscribe-box">
-      <li class="subscribe-content">
-        <p class="subscribe-price">
-          NT$&nbsp;188
-          <span class="subscribe-period">&#124;&nbsp;每月</span>
-        </p>
-        <a class="subscribe-btn" href="#">訂閱基本月費</a>
-      </li>
-      <li class="subscribe-content">
-        <p class="subscribe-price">
-          NT$&nbsp;1888
-          <span class="subscribe-period">&#124;&nbsp;每年</span>
-        </p>
-        <p style="color: #f0f0f0">*馬上節省兩個月費用！</p>
-        <a class="subscribe-btn" href="#">訂閱超值年費</a>
-      </li>
-    </ul>
+<div class="container">
+  <button
+    class="go-top"
+    @click="goTop"
+    :class="yScrollVaule < 50 ? 'd-none':''"
+  ></button>
+  <div
+    v-if="loading"
+    style="color: #f4696b"
+    class="loading la-square-jelly-box la-2x"
+  >
+    <div></div>
+    <div></div>
   </div>
-</section>
-<section>
-  <h2 class="h2">熱門電影</h2>
-  <ul class="popular-box">
-    <li v-for="i in 9">
-      <a href="#">
-        <img
-          class="popular-movie"
-          :src="`https://picsum.photos/400/225?random=${i}`"
-          alt="熱門電影"
-        />
+  <div v-else>
+    <header class="header">
+      <a class="home" href="#">
+        <h1 class="text-gradient">JUST<br />WATCH</h1>
       </a>
-    </li>
-  </ul>
-</section>
-<section>
-  <h2 class="h2">訂閱即享</h2>
-  <ul class="advantage-box">
-    <li class="advantage-content">
-      <img class="advantage-img" src="./movie.png" alt="movie-icon" />
-      <h3 class="advantage-title">豐富多樣的種類</h3>
-      <p class="advantage-text">
-        提供最新且最齊全的電影，探索各式各樣的熱門影片，盡情享受強檔電影的樂趣。現在立即訂閱，一同深陷電影的魅力中。
-      </p>
-    </li>
-    <li class="advantage-content">
-      <img class="advantage-img" src="./devices.png" alt="movie-icon" />
-      <h3 class="advantage-title">支援各種裝置</h3>
-      <p class="advantage-text">
-        支援電視、電腦、平板及手機，在任何時間、地點，都能享受到電影的樂趣。
-      </p>
-    </li>
-    <li class="advantage-content">
-      <img class="advantage-img" src="./share.png" alt="movie-icon" />
-      <h3 class="advantage-title">分享更多的樂趣</h3>
-      <p class="advantage-text">
-        最高設定&nbsp;6&nbsp;個不同帳戶，並且支援&nbsp;4&nbsp;個帳戶同時觀看，與家人、好友一同分享。
-      </p>
-    </li>
-    <li class="advantage-content">
-      <img class="advantage-img" src="./advertisement.png" alt="movie-icon" />
-      <h3 class="advantage-title">遠離廣告的打擾</h3>
-      <p class="advantage-text">
-        在這裡，您將不再受到煩人的廣告打擾，可以完全陶醉在電影的世界中。
-      </p>
-    </li>
-    <li>
-      <div class="advantage-bg"></div>
-    </li>
-  </ul>
-</section>
-<section>
-  <h2 class="h2">適用裝置</h2>
-  <ul class="device-box">
-    <li>
-      <img class="img-200px" src="./tv.png" alt="電視" />
-      <h3 class="device-name">電視</h3>
-      <div class="device-detail">
-        <p>Apple TV</p>
-        <p>Android TV</p>
-        <p>Chromecast</p>
+      <ul class="nav">
+        <li>
+          <a class="nav-btn register" href="#">立即註冊</a>
+        </li>
+        <li>
+          <a class="nav-btn login" href="#">登入</a>
+        </li>
+      </ul>
+    </header>
+    <section class="ad-box">
+      <div class="ad-content">
+        <h2 class="ad-title text-gradient">JUST WATCH</h2>
+        <p class="ad-slogan">精彩的電影</p>
+        <p class="ad-slogan">各式各樣的選擇</p>
+        <p class="ad-slogan">盡在&nbsp;JUST&nbsp;WATCH</p>
+        <ul class="subscribe-box">
+          <li class="subscribe-content">
+            <p class="subscribe-price">
+              NT$&nbsp;188
+              <span class="subscribe-period">&#124;&nbsp;每月</span>
+            </p>
+            <a class="subscribe-btn" href="#">訂閱基本月費</a>
+          </li>
+          <li class="subscribe-content">
+            <p class="subscribe-price">
+              NT$&nbsp;1,888
+              <span class="subscribe-period">&#124;&nbsp;每年</span>
+            </p>
+            <p style="color: #f0f0f0">*馬上節省兩個月費用！</p>
+            <a class="subscribe-btn" href="#">訂閱超值年費</a>
+          </li>
+        </ul>
       </div>
-    </li>
-    <li>
-      <img class="img-150px" src="./computer.png" alt="電腦" />
-      <h3 class="device-name">電腦</h3>
-      <div class="device-detail">
-        <p>Chorme 作業系統</p>
-        <p>Apple 作業系統</p>
-        <p>Windows 個人電腦</p>
+    </section>
+    <section>
+      <h2 class="h2">熱門電影</h2>
+      <ul class="popular-box">
+        <li v-for="i in 9">
+          <a href="#">
+            <img
+              class="popular-movie"
+              :src="`https://picsum.photos/400/225?random=${i}`"
+              alt="熱門電影"
+            />
+          </a>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="h2" data-aos="fade-down" data-aos-duration="1000">訂閱即享</h2>
+      <ul class="advantage-box">
+        <li
+          class="advantage-content"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+          data-aos-delay="100"
+        >
+          <img class="advantage-img" src="./movie.png" alt="movie-icon" />
+          <h3 class="advantage-title">豐富多樣的種類</h3>
+          <p class="advantage-text">
+            提供最新且最齊全的電影，探索各式各樣的熱門影片，盡情享受強檔電影的樂趣。現在立即訂閱，一同深陷電影的魅力中。
+          </p>
+        </li>
+        <li
+          class="advantage-content"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+          data-aos-delay="400"
+        >
+          <img class="advantage-img" src="./devices.png" alt="movie-icon" />
+          <h3 class="advantage-title">支援各種裝置</h3>
+          <p class="advantage-text">
+            支援電視、電腦、平板及手機，在任何時間、地點，都能享受到電影的樂趣。
+          </p>
+        </li>
+        <li
+          class="advantage-content"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+          data-aos-delay="700"
+        >
+          <img class="advantage-img" src="./share.png" alt="movie-icon" />
+          <h3 class="advantage-title">分享更多的樂趣</h3>
+          <p class="advantage-text">
+            最高設定&nbsp;6&nbsp;個不同帳戶，並且支援&nbsp;4&nbsp;個帳戶同時觀看，與家人、好友一同分享。
+          </p>
+        </li>
+        <li
+          class="advantage-content"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+          data-aos-delay="1000"
+        >
+          <img
+            class="advantage-img"
+            src="./advertisement.png"
+            alt="movie-icon"
+          />
+          <h3 class="advantage-title">遠離廣告的打擾</h3>
+          <p class="advantage-text">
+            在這裡，您將不再受到煩人的廣告打擾，可以完全陶醉在電影的世界中。
+          </p>
+        </li>
+        <li>
+          <div class="advantage-bg"></div>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="h2">適用裝置</h2>
+      <ul class="device-box">
+        <li>
+          <img class="img-200px" src="./tv.png" alt="電視" />
+          <h3 class="device-name">電視</h3>
+          <div class="device-detail">
+            <p>Apple TV</p>
+            <p>Android TV</p>
+            <p>Chromecast</p>
+          </div>
+        </li>
+        <li>
+          <img class="img-150px" src="./computer.png" alt="電腦" />
+          <h3 class="device-name">電腦</h3>
+          <div class="device-detail">
+            <p>Chorme 作業系統</p>
+            <p>Apple 作業系統</p>
+            <p>Windows 個人電腦</p>
+          </div>
+        </li>
+        <li>
+          <img class="img-100px" src="./tablet.png" alt="平板" />
+          <h3 class="device-name">平板</h3>
+          <div class="device-detail">
+            <p>Android 平板電腦</p>
+            <p>iPad</p>
+          </div>
+        </li>
+        <li>
+          <img class="img-100px" src="./phone.png" alt="手機" />
+          <h3 class="device-name">手機</h3>
+          <div class="device-detail">
+            <p>Android 系統</p>
+            <p>iOS 系統</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <footer class="footer">
+      <div class="community">
+        <a href="https://twitter.com/home"
+          ><img class="community-btn" src="./twitter.png" alt="twitter" /></a
+        >|
+        <a href="https://www.facebook.com/"
+          ><img class="community-btn" src="./facebook.png" alt="facebook" /></a
+        >|
+        <a href="https://www.instagram.com/"
+          ><img class="community-btn" src="./instagram.png" alt="instagram"
+        /></a>
       </div>
-    </li>
-    <li>
-      <img class="img-100px" src="./tablet.png" alt="平板" />
-      <h3 class="device-name">平板</h3>
-      <div class="device-detail">
-        <p>Android 平板電腦</p>
-        <p>iPad</p>
+      <div class="copyright">
+        <p>
+          &copy; Copyright 2023 <br />
+          本站為單純的作品練習，不使用於任何商業或營利行為
+        </p>
       </div>
-    </li>
-    <li>
-      <img class="img-100px" src="./phone.png" alt="手機" />
-      <h3 class="device-name">手機</h3>
-      <div class="device-detail">
-        <p>Android 系統</p>
-        <p>iOS 系統</p>
-      </div>
-    </li>
-  </ul>
-</section>
-<footer class="footer">
-  <div class="community">
-    <a href="https://twitter.com/home"
-      ><img class="community-btn" src="./twitter.png" alt="twitter" /></a
-    >|
-    <a href="https://www.facebook.com/"
-      ><img class="community-btn" src="./facebook.png" alt="facebook" /></a
-    >|
-    <a href="https://www.instagram.com/"
-      ><img class="community-btn" src="./instagram.png" alt="instagram"
-    /></a>
+    </footer>
   </div>
-  <div class="copyright">
-    <p>
-      &copy; Copyright 2023 <br />
-      本站為單純的作品練習，不使用於任何商業或營利行為
-    </p>
-  </div>
-</footer>
+</div>
