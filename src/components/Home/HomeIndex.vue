@@ -9,21 +9,21 @@ const setup = () => {
   AOS.init();
   AOS.refresh();
   const loading = ref(true);
-  const yScrollValue = ref("");
+  const yScrollValue = ref();
+  function scrollWatch() {
+    yScrollValue.value = window.scrollY;
+  }
   onMounted(() => {
     setTimeout(() => {
       loading.value = false;
     }, 2000);
+    window.addEventListener("scroll", scrollWatch);
   });
-  // onMounted(() => {
-  //   window.addEventListener('scroll', this.scrollWatch);
-  // });
-  function scrollWatch() {
-    this.yScrollVaule = window.scrollY;
-  }
   function goTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }
   return {
     loading,

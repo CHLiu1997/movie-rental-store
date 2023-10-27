@@ -2,7 +2,7 @@
   <button
     class="go-top"
     @click="goTop"
-    :class="yScrollVaule < 50 ? 'd-none':''"
+    :class="yScrollValue > 200 ? 'd-block':'d-none'"
   ></button>
   <div
     v-if="loading"
@@ -17,6 +17,8 @@
       <a class="home" href="#">
         <h1 class="text-gradient">JUST<br />WATCH</h1>
       </a>
+      <label for="nav" class="nav-icon"></label>
+      <input type="checkbox" id="nav" />
       <ul class="nav">
         <li>
           <a class="nav-btn register" href="#">立即註冊</a>
@@ -66,7 +68,7 @@
       </ul>
     </section>
     <section>
-      <h2 class="h2" data-aos="fade-down" data-aos-duration="1000">訂閱即享</h2>
+      <h2 class="h2">訂閱即享</h2>
       <ul class="advantage-box">
         <li
           class="advantage-content"
@@ -120,44 +122,41 @@
             在這裡，您將不再受到煩人的廣告打擾，可以完全陶醉在電影的世界中。
           </p>
         </li>
-        <li>
-          <div class="advantage-bg"></div>
-        </li>
       </ul>
     </section>
     <section>
       <h2 class="h2">適用裝置</h2>
       <ul class="device-box">
-        <li>
+        <li class="device-content">
           <img class="img-200px" src="./tv.png" alt="電視" />
           <h3 class="device-name">電視</h3>
-          <div class="device-detail">
+          <div class="device-text">
             <p>Apple TV</p>
             <p>Android TV</p>
             <p>Chromecast</p>
           </div>
         </li>
-        <li>
+        <li class="device-content">
           <img class="img-150px" src="./computer.png" alt="電腦" />
           <h3 class="device-name">電腦</h3>
-          <div class="device-detail">
+          <div class="device-text">
             <p>Chorme 作業系統</p>
             <p>Apple 作業系統</p>
             <p>Windows 個人電腦</p>
           </div>
         </li>
-        <li>
+        <li class="device-content">
           <img class="img-100px" src="./tablet.png" alt="平板" />
           <h3 class="device-name">平板</h3>
-          <div class="device-detail">
+          <div class="device-text">
             <p>Android 平板電腦</p>
             <p>iPad</p>
           </div>
         </li>
-        <li>
+        <li class="device-content">
           <img class="img-100px" src="./phone.png" alt="手機" />
           <h3 class="device-name">手機</h3>
-          <div class="device-detail">
+          <div class="device-text">
             <p>Android 系統</p>
             <p>iOS 系統</p>
           </div>
