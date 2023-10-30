@@ -1,0 +1,89 @@
+<div class="container">
+  <button
+    class="go-top"
+    @click="goTop"
+    :class="yScrollValue > 200 ? 'd-block':'d-none'"
+  ></button>
+  <div
+    v-if="loading"
+    style="color: #f4696b"
+    class="loading la-square-jelly-box la-2x"
+  >
+    <div></div>
+    <div></div>
+  </div>
+  <div v-else>
+    <header class="header">
+      <a class="home" href="#">
+        <h1 class="text-gradient">JUST<br />WATCH</h1>
+      </a>
+      <label for="nav" class="nav-icon"></label>
+      <input type="checkbox" id="nav" />
+      <ul class="nav">
+        <li>
+          <a class="nav-btn register" href="#">立即註冊</a>
+        </li>
+        <li>
+          <a class="nav-btn login" href="#">登入</a>
+        </li>
+      </ul>
+    </header>
+    <section>
+      <swiper
+        class="swiper"
+        style="
+          --swiper-pagination-color: #f0f0f0;
+          --swiper-pagination-bullet-inactive-color: #f0f0f0;
+          --swiper-pagination-bullet-inactive-opacity: 0.5;
+        "
+        :modules="modules"
+        :pagination="{ clickable: true, dynamicBullets: true}"
+        :effect="'coverflow'"
+        :grab-cursor="true"
+        :centered-slides="true"
+        :slides-per-view="'auto'"
+        :coverflow-effect="{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true
+        }"
+        :autoplay="{
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        }"
+      >
+        <swiper-slide class="slide" v-for="i in 9" :key="i">
+          <a href="#">
+            <img
+              class="slide-img"
+              :src="`https://picsum.photos/1440/400?random=${i}`"
+              alt="slide {{ i }}"
+            />
+          </a>
+        </swiper-slide>
+      </swiper>
+    </section>
+    <footer class="footer">
+      <div class="community">
+        <a href="https://twitter.com/home"
+          ><img class="community-btn" src="./twitter.png" alt="twitter" /></a
+        >|
+        <a href="https://www.facebook.com/"
+          ><img class="community-btn" src="./facebook.png" alt="facebook" /></a
+        >|
+        <a href="https://www.instagram.com/"
+          ><img class="community-btn" src="./instagram.png" alt="instagram"
+        /></a>
+      </div>
+      <div class="copyright">
+        <p>
+          &copy; Copyright 2023 <br />
+          本站為單純的作品練習，不使用於任何商業或營利行為
+        </p>
+      </div>
+    </footer>
+  </div>
+</div>

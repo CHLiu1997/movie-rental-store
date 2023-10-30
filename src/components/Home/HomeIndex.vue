@@ -2,8 +2,6 @@
 import { onMounted, ref } from "vue";
 import AOS from "aos";
 import "aos/dist/aos.css";
-// import { Splide, SplideSlide } from "@splidejs/vue-splide";
-// import "@splidejs/vue-splide/css/customize";
 
 const setup = () => {
   AOS.init();
@@ -34,13 +32,8 @@ const setup = () => {
 };
 
 export default {
-  // components: {
-  //   Splide,
-  //   SplideSlide,
-  // },
   setup,
 };
 </script>
-<template src="./template.html"></template>
-<style src="./style.css"></style>
-<style src="./reset.css"></style>
+<template src="./template.html" />
+<style scoped src="./style.css" />
