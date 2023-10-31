@@ -1,4 +1,4 @@
-<div class="container">
+<div class="wrapper">
   <button
     class="go-top"
     @click="goTop"
@@ -28,14 +28,9 @@
         </li>
       </ul>
     </header>
-    <section>
+    <main>
       <swiper
         class="swiper"
-        style="
-          --swiper-pagination-color: #f0f0f0;
-          --swiper-pagination-bullet-inactive-color: #f0f0f0;
-          --swiper-pagination-bullet-inactive-opacity: 0.5;
-        "
         :modules="modules"
         :pagination="{ clickable: true, dynamicBullets: true}"
         :effect="'coverflow'"
@@ -43,17 +38,17 @@
         :centered-slides="true"
         :slides-per-view="'auto'"
         :coverflow-effect="{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true
-        }"
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true
+          }"
         :autoplay="{
-          delay: 3000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true
-        }"
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+          }"
       >
         <swiper-slide class="slide" v-for="i in 9" :key="i">
           <a href="#">
@@ -65,7 +60,26 @@
           </a>
         </swiper-slide>
       </swiper>
-    </section>
+      <section class="container">
+        <ul class="sidebar">
+          <li
+            @click="addActive(index)"
+            v-for="(item, index) in movieCatories"
+            :key="index"
+          >
+            <a
+              class="category"
+              :class="{'active' : actived === index}"
+              href="#"
+            >
+              {{ item[0] }} <br />
+              {{ item[1] }}
+            </a>
+          </li>
+        </ul>
+        <div class="movie"></div>
+      </section>
+    </main>
     <footer class="footer">
       <div class="community">
         <a href="https://twitter.com/home"

@@ -6,17 +6,17 @@ import "aos/dist/aos.css";
 const setup = () => {
   AOS.init();
   AOS.refresh();
-  const loading = ref(true);
-  const yScrollValue = ref();
-  function scrollWatch() {
-    yScrollValue.value = window.scrollY;
-  }
   onMounted(() => {
     setTimeout(() => {
       loading.value = false;
     }, 2000);
     window.addEventListener("scroll", scrollWatch);
   });
+  const loading = ref(true);
+  const yScrollValue = ref();
+  function scrollWatch() {
+    yScrollValue.value = window.scrollY;
+  }
   function goTop() {
     window.scrollTo({
       top: 0,

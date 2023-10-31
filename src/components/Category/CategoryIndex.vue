@@ -11,12 +11,44 @@ const setup = () => {
     setTimeout(() => {
       loading.value = false;
     }, 2000);
+    window.addEventListener("scroll", scrollWatch);
   });
   const loading = ref(true);
+  const yScrollValue = ref();
   const modules = ref([Pagination, EffectCoverflow, Autoplay]);
+  const movieCatories = ref({
+    all: ["全部", "All"],
+    sciFi: ["科幻", "Science fiction"],
+    horror: ["恐怖", "Horror"],
+    romantic: ["浪漫", "Romantic"],
+    action: ["動作", "Action"],
+    comedy: ["喜劇", "Comedy"],
+    classic: ["經典", "Classic"],
+    animation: ["動畫", "Animation"],
+  });
+  const actived = ref("all");
+  function scrollWatch() {
+    yScrollValue.value = window.scrollY;
+  }
+  function goTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+  function addActive(index) {
+    actived.value = index;
+    console.log(index);
+  }
   return {
     loading,
+    yScrollValue,
+    goTop,
+    scrollWatch,
     modules,
+    movieCatories,
+    actived,
+    addActive,
   };
 };
 export default {
@@ -29,28 +61,3 @@ export default {
 </script>
 <template src="./template.html" />
 <style scoped src="./style.css" />
-<!-- <style lang="scss" scoped>
-// @import "@/styles/variables.scss";
-// @import "@/styles/mixins.scss";
-// @import "./style.scss";
-// .coverflow-example {
-//   // @include swiper-wrapper($height: 380px);
-//   position: relative;
-// }
-.swiper {
-  height: 100%;
-  width: 100%;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  .slide {
-    width: 60vw;
-    height: 400px;
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-}
-</style> -->
