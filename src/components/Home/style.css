@@ -223,10 +223,10 @@
   height: 48px;
   width: 48px;
   background-color: transparent;
-  background-image: url(./arrow-up.png);
+  background-image: url(@/img/arrow-up.png);
   background-size: cover;
   border: none;
-  z-index: 1;
+  z-index: 99;
   cursor: pointer;
   opacity: 0.8;
 }
@@ -252,7 +252,7 @@
   display: none;
 }
 .nav-icon {
-  background-image: url(./nav.png);
+  background-image: url(@/img/nav.png);
   width: 50px;
   height: 50px;
   background-size: cover;

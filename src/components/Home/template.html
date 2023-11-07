@@ -60,8 +60,8 @@
           <a href="#">
             <img
               class="popular-movie"
-              :src="`https://picsum.photos/400/225?random=${i}`"
-              :alt="`熱門電影-${i}`"
+              :src="'https://picsum.photos/400/225?random=' + i"
+              :alt="'熱門電影' + i"
             />
           </a>
         </li>
@@ -166,13 +166,19 @@
     <footer class="footer">
       <div class="community">
         <a href="https://twitter.com/home"
-          ><img class="community-btn" src="./twitter.png" alt="twitter" /></a
+          ><img
+            class="community-btn"
+            src="@/img/twitter.png"
+            alt="twitter" /></a
         >|
         <a href="https://www.facebook.com/"
-          ><img class="community-btn" src="./facebook.png" alt="facebook" /></a
+          ><img
+            class="community-btn"
+            src="@/img/facebook.png"
+            alt="facebook" /></a
         >|
         <a href="https://www.instagram.com/"
-          ><img class="community-btn" src="./instagram.png" alt="instagram"
+          ><img class="community-btn" src="@/img/instagram.png" alt="instagram"
         /></a>
       </div>
       <div class="copyright">

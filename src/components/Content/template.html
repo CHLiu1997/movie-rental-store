@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <button
+    class="go-top"
+    @click="goTop"
+    :class="yScrollValue > 200 ? 'd-block':'d-none'"
+  ></button>
+  <div
+    v-if="loading"
+    style="color: #f4696b"
+    class="loading la-square-jelly-box la-2x"
+  >
+    <div></div>
+    <div></div>
+  </div>
+  <div v-else>
+    <header class="header">
+      <a class="home" href="/">
+        <h1 class="text-gradient">JUST<br />WATCH</h1>
+      </a>
+      <label for="nav" class="nav-icon"></label>
+      <input type="checkbox" id="nav" />
+      <ul class="nav">
+        <li>
+          <a class="nav-btn register" href="#">立即註冊</a>
+        </li>
+        <li>
+          <a class="nav-btn login" href="#">登入</a>
+        </li>
+      </ul>
+    </header>
+    <main style="height: 1000px"></main>
+    <footer class="footer">
+      <div class="community">
+        <a href="https://twitter.com/home"
+          ><img
+            class="community-btn"
+            src="@/img/twitter.png"
+            alt="twitter" /></a
+        >|
+        <a href="https://www.facebook.com/"
+          ><img
+            class="community-btn"
+            src="@/img/facebook.png"
+            alt="facebook" /></a
+        >|
+        <a href="https://www.instagram.com/"
+          ><img class="community-btn" src="@/img/instagram.png" alt="instagram"
+        /></a>
+      </div>
+      <div class="copyright">
+        <p>
+          &copy; Copyright 2023 <br />
+          本站為單純的作品練習，不使用於任何商業或營利行為
+        </p>
+      </div>
+    </footer>
+  </div>
+</div>

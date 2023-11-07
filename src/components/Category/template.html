@@ -14,7 +14,7 @@
   </div>
   <div v-else>
     <header class="header">
-      <a class="home" href="#">
+      <a class="home" href="/">
         <h1 class="text-gradient">JUST<br />WATCH</h1>
       </a>
       <label for="nav" class="nav-icon"></label>
@@ -30,8 +30,9 @@
     </header>
     <main>
       <swiper
-        class="swiper"
+        class="swiper main-swiper-padding"
         :modules="modules"
+        :loop="true"
         :pagination="{ clickable: true, dynamicBullets: true}"
         :effect="'coverflow'"
         :grab-cursor="true"
@@ -45,17 +46,17 @@
             slideShadows: true
           }"
         :autoplay="{
-            delay: 3000,
+            delay: 100000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true
           }"
       >
-        <swiper-slide class="slide" v-for="i in 9" :key="i">
+        <swiper-slide class="main-slide" v-for="i in 9" :key="i">
           <a href="#">
             <img
-              class="slide-img"
-              :src="`https://picsum.photos/1440/400?random=${i}`"
-              alt="slide {{ i }}"
+              class="main-slide-img"
+              :src="'https://picsum.photos/1440/400?random=' + i"
+              :alt="'main-slide-' + i"
             />
           </a>
         </swiper-slide>
@@ -63,13 +64,13 @@
       <section class="container">
         <ul class="sidebar">
           <li
-            @click="addActive(index)"
-            v-for="(item, index) in movieCatories"
-            :key="index"
+            @click="addActive(sidebarIndex)"
+            v-for="(item, sidebarIndex) in movieCatories"
+            :key="sidebarIndex"
           >
             <a
-              class="category"
-              :class="{'active' : actived === index}"
+              class="sidebar-btn"
+              :class="{'sidebar-active' : actived === sidebarIndex}"
               href="#"
             >
               {{ item[0] }} <br />
@@ -77,19 +78,88 @@
             </a>
           </li>
         </ul>
-        <div class="movie"></div>
+        <div class="drop">
+          <div class="drop-default">
+            <span>{{ movieCatories[actived][0] }}</span>
+            <span class="arrow"></span>
+          </div>
+          <ul class="dropdown">
+            <li
+              @click="addActive(dropdownIndex)"
+              class="dropdown-option"
+              v-for="(item, dropdownIndex) in movieCatories"
+              :key="dropdownIndex"
+            >
+              <a
+                :class="{'dropdown-active' : actived === dropdownIndex}"
+                class="dropdown-btn"
+                href="#"
+              >
+                {{ item[0] }}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <ul class="categoty-box">
+          <li
+            v-for="(title, titleIndex) in movieCatoriesTitle"
+            :key="titleIndex"
+          >
+            <h3 class="categoty-title">{{ title }}</h3>
+            <swiper
+              class="swiper"
+              :modules="modules"
+              :space-between="5"
+              :slides-per-view="4"
+              :slides-per-group="1"
+              :loop="true"
+              :loop-fill-group-with-blank="true"
+              :navigation="true"
+            >
+              <swiper-slide v-for="i in 8" :key="i">
+                <a class="categoty-slide" href="#">
+                  <img
+                    style="box-sizing: border-box"
+                    :src="'https://picsum.photos/300/200?random=' + titleIndex + i"
+                    :alt="actived + '-slide-' + i"
+                  />
+                </a>
+              </swiper-slide>
+            </swiper>
+          </li>
+        </ul>
+        <!-- <div class="categoty-box">
+          <h3 class="categoty-title">{{ movieCatories[actived][0] }}</h3>
+          <ul class="specific-categoty">
+            <li v-for="i in 24" :key="i">
+              <a href="#">
+                <img
+                  style="box-sizing: border-box"
+                  :src="'https://picsum.photos/300/200?random=' + actived + i"
+                  :alt="actived + '-slide-' + i"
+                />
+              </a>
+            </li>
+          </ul>
+        </div> -->
       </section>
     </main>
     <footer class="footer">
       <div class="community">
         <a href="https://twitter.com/home"
-          ><img class="community-btn" src="./twitter.png" alt="twitter" /></a
+          ><img
+            class="community-btn"
+            src="@/img/twitter.png"
+            alt="twitter" /></a
         >|
         <a href="https://www.facebook.com/"
-          ><img class="community-btn" src="./facebook.png" alt="facebook" /></a
+          ><img
+            class="community-btn"
+            src="@/img/facebook.png"
+            alt="facebook" /></a
         >|
         <a href="https://www.instagram.com/"
-          ><img class="community-btn" src="./instagram.png" alt="instagram"
+          ><img class="community-btn" src="@/img/instagram.png" alt="instagram"
         /></a>
       </div>
       <div class="copyright">

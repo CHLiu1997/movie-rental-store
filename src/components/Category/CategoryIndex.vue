@@ -1,9 +1,15 @@
 <script>
 import { onMounted, ref } from "vue";
-import { Pagination, EffectCoverflow, Autoplay } from "swiper/modules";
+import {
+  Pagination,
+  Navigation,
+  EffectCoverflow,
+  Autoplay,
+} from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 
 const setup = () => {
@@ -13,11 +19,12 @@ const setup = () => {
     }, 2000);
     window.addEventListener("scroll", scrollWatch);
   });
+  const modules = ref([Pagination, Navigation, EffectCoverflow, Autoplay]);
   const loading = ref(true);
   const yScrollValue = ref();
-  const modules = ref([Pagination, EffectCoverflow, Autoplay]);
+  const actived = ref("all");
   const movieCatories = ref({
-    all: ["全部", "All"],
+    all: ["所有類型", "All"],
     sciFi: ["科幻", "Science fiction"],
     horror: ["恐怖", "Horror"],
     romantic: ["浪漫", "Romantic"],
@@ -26,7 +33,16 @@ const setup = () => {
     classic: ["經典", "Classic"],
     animation: ["動畫", "Animation"],
   });
-  const actived = ref("all");
+
+  const movieCatoriesTitle = ref([
+    "科幻",
+    "恐怖",
+    "浪漫",
+    "動作",
+    "喜劇",
+    "經典",
+    "動畫",
+  ]);
   function scrollWatch() {
     yScrollValue.value = window.scrollY;
   }
@@ -36,18 +52,19 @@ const setup = () => {
       behavior: "smooth",
     });
   }
-  function addActive(index) {
-    actived.value = index;
-    console.log(index);
+  function addActive(category) {
+    actived.value = category;
+    // console.log(category);
   }
   return {
+    modules,
     loading,
     yScrollValue,
-    goTop,
-    scrollWatch,
-    modules,
-    movieCatories,
     actived,
+    movieCatories,
+    movieCatoriesTitle,
+    scrollWatch,
+    goTop,
     addActive,
   };
 };
