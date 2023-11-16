@@ -1,5 +1,10 @@
 <script>
 import { onMounted, ref } from "vue";
+import { Navigation, Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import "swiper/css/navigation";
+
 const setup = () => {
   onMounted(() => {
     setTimeout(() => {
@@ -9,6 +14,7 @@ const setup = () => {
   });
   const loading = ref(true);
   const yScrollValue = ref();
+  const modules = ref([Navigation, Autoplay]);
   function scrollWatch() {
     yScrollValue.value = window.scrollY;
   }
@@ -21,11 +27,16 @@ const setup = () => {
   return {
     loading,
     yScrollValue,
+    modules,
     scrollWatch,
     goTop,
   };
 };
 export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
   setup,
 };
 </script>

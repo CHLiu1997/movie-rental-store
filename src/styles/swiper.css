@@ -1,3 +1,4 @@
+/* Category Page */
 .swiper-pagination .swiper-pagination-bullet {
   background: #f0f0f0;
   opacity: 0.5;
@@ -11,9 +12,20 @@
   font-size: 36px;
   font-weight: bold;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .categoty-box .swiper-button-prev::after,
   .categoty-box .swiper-button-next::after {
+    font-size: 24px;
+  }
+}
+/* Content Page */
+.rec-swiper .swiper-button-prev::after,
+.rec-swiper .swiper-button-next::after {
+  font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+  .rec-swiper .swiper-button-prev::after,
+  .rec-swiper .swiper-button-next::after {
     font-size: 24px;
   }
 }

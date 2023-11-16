@@ -46,7 +46,7 @@
             slideShadows: true
           }"
         :autoplay="{
-            delay: 100000,
+            delay: 5000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true
           }"
@@ -107,7 +107,6 @@
           >
             <h3 class="categoty-title">{{ title }}</h3>
             <swiper
-              class="swiper"
               :modules="modules"
               :space-between="5"
               :slides-per-view="4"
@@ -119,7 +118,6 @@
               <swiper-slide v-for="i in 8" :key="i">
                 <a class="categoty-slide" href="#">
                   <img
-                    style="box-sizing: border-box"
                     :src="'https://picsum.photos/300/200?random=' + titleIndex + i"
                     :alt="actived + '-slide-' + i"
                   />

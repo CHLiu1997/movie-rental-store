@@ -28,7 +28,97 @@
         </li>
       </ul>
     </header>
-    <main style="height: 1000px"></main>
+    <main>
+      <a class="prev" href="http://localhost:8080/category"
+        ><img src="./left-arrow.png" alt="" /><span>返回</span></a
+      >
+      <div class="info">
+        <div class="info-card">
+          <img src="https://picsum.photos/300/400?random=1" alt="" />
+          <div>
+            <div class="info-title">
+              <h1>電影標題</h1>
+              <h2>Movie Title</h2>
+            </div>
+            <div class="info-detail">
+              <h3>MOVE INFO</h3>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>導演:</td>
+                    <td>導演A</td>
+                  </tr>
+                  <tr>
+                    <td>演員:</td>
+                    <td>演員A、演員B、演員C、演員D</td>
+                  </tr>
+                  <tr>
+                    <td>類型:</td>
+                    <td>類型B</td>
+                  </tr>
+                  <tr>
+                    <td>片長:</td>
+                    <td>X小時Y分</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="trailer">
+          <div class="trailer-title">
+            <img src="./arrow-right.png" />
+            <h2>搶先觀賞</h2>
+          </div>
+          <div class="trailer-video">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/C3GouGa0noM?si=_iWS0Yfmd3NzRUVx"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="intro">
+        <h2>電影簡介</h2>
+        <p>
+          《永不屈服》是一部充滿動作場面與感人故事情節的驚險冒險片。影片由新晉導演艾莉森·漢恩，帶領觀眾進入一場驚心動魄的旅程。劇情以一名平凡的年輕人為中心，他在一場突如其來的危機中被捲入一場國際陰謀，使得他不得不挺身而出，成為這場危機中的關鍵人物。這位年輕英雄的冒險不僅充滿刺激，更考驗著他的勇氣和智慧。隨著劇情的發展，觀眾將深陷於敘事的情感旋渦中，緊張感逐漸升華。
+        </p>
+        <p>
+          影片中的角色塑造和演技同樣令人驚豔。主演以出色的表現帶來一場場驚險刺激的戲碼，使得觀眾更容易投入故事中。此外，片中的視覺效果和動作場面更是為影片增色不少，令人難以置信的特技和精湛的攝影手法將觀眾帶入了一個全新的視覺饗宴。無論是在城市街道上的追逐戰，還是在極限的生存場景中，影片的每一刻都猶如一場視聽盛宴，將觀眾的心跳推至高潮。
+        </p>
+        <p>
+          然而，《永不屈服》並非僅僅是一部以動作場面為主的電影，它同時也深刻地觸及了人性的脆弱和勇氣。在這場生死存亡的挑戰中，角色們逐漸展現出無窮的毅力和堅持。劇情中的情感糾葛以及主人公與反派之間的心理對決，使整部電影擁有了更多層次的深度。這不僅僅是一場動作冒險，更是一場情感之旅。結局處心積慮，讓人在高潮迭起中不禁為主人公的勇氣和智慧而感到敬佩。《永不屈服》絕對是一部讓人留連忘返的影片，將觀眾帶入一場前所未有的視覺
+        </p>
+      </div>
+      <div class="rec">
+        <h2>為您推薦</h2>
+        <swiper
+          class="rec-swiper"
+          :modules="modules"
+          :space-between="30"
+          :slides-per-view="3"
+          :loop="true"
+          :navigation="true"
+          :autoplay="{
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+          }"
+        >
+          <swiper-slide v-for="i in 8" :key="i"
+            ><a class="rec-slide" href="#"
+              ><img
+                :src="'https://picsum.photos/500/300?random=' + i"
+                :alt="'slide-' + i" /></a
+          ></swiper-slide>
+        </swiper>
+      </div>
+    </main>
     <footer class="footer">
       <div class="community">
         <a href="https://twitter.com/home"
