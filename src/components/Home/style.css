@@ -517,6 +517,7 @@
   flex-wrap: wrap;
   align-items: center;
   color: #f0f0f0;
+  margin-bottom: 4rem;
 }
 .img-200px {
   height: 200px;
@@ -554,7 +555,6 @@
   flex-direction: column;
   color: #f0f0f0;
   border-top: 1px solid #f0f0f0;
-  margin-top: 4rem;
 }
 .community {
   display: flex;

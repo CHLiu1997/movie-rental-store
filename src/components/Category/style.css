@@ -479,7 +479,7 @@
 /* Categoty-box */
 .categoty-box {
   width: 78vw;
-  margin-right: 2vw;
+  margin: 0 2vw 4rem 0;
 }
 .categoty-title {
   font-size: 2.2rem;
@@ -536,7 +536,6 @@
   flex-direction: column;
   color: #f0f0f0;
   border-top: 1px solid #f0f0f0;
-  margin-top: 4rem;
 }
 .community {
   display: flex;
