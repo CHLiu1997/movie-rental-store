@@ -1,0 +1,112 @@
+<main>
+  <section>
+    <swiper
+      class="swiper main-swiper-padding"
+      :modules="modules"
+      :loop="true"
+      :pagination="{ clickable: true, dynamicBullets: true}"
+      :effect="'coverflow'"
+      :grab-cursor="true"
+      :centered-slides="true"
+      :slides-per-view="'auto'"
+      :coverflow-effect="{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true
+          }"
+      :autoplay="{
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+          }"
+    >
+      <swiper-slide class="main-slide" v-for="i in 9" :key="i">
+        <a href="#">
+          <img
+            class="main-slide-img"
+            :src="'https://picsum.photos/1440/400?random=' + i"
+            :alt="'main-slide-' + i"
+          />
+        </a>
+      </swiper-slide>
+    </swiper>
+  </section>
+  <section class="container">
+    <ul class="sidebar">
+      <li
+        @click="addActive(item.value)"
+        v-for="item in categoryList"
+        :key="item.value"
+      >
+        <a
+          class="sidebar-btn"
+          :class="{'sidebar-active' : actived.value === item.value}"
+          :href="item.url"
+        >
+          {{ item.label }} <br />
+          {{ item.value }}
+        </a>
+      </li>
+    </ul>
+    <div class="dropdown">
+      <div class="dropdown-default">
+        <span>{{ actived.label }}</span>
+        <span class="arrow"></span>
+      </div>
+      <ul>
+        <li
+          @click="addActive(item.value)"
+          v-for="item in categoryList"
+          :key="item.value"
+        >
+          <a
+            class="dropdown-btn"
+            :class="{'dropdown-active' : actived.value === item.value}"
+            :href="item.url"
+          >
+            {{ item.label }}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <ul class="category">
+      <li v-for="item in categoryList" :key="item.value">
+        <h3>{{ item.label }}</h3>
+        <swiper
+          :modules="modules"
+          :space-between="5"
+          :slides-per-view="4"
+          :slides-per-group="1"
+          :loop="true"
+          :loop-fill-group-with-blank="true"
+          :navigation="true"
+        >
+          <swiper-slide v-for="i in 8" :key="i">
+            <a class="category-slide" href="#">
+              <img
+                :src="'https://picsum.photos/300/200?random=' + item.value + i"
+                :alt="item.value + '-slide-' + i"
+              />
+            </a>
+          </swiper-slide>
+        </swiper>
+      </li>
+    </ul>
+    <!-- <div class="category">
+      <h3>{{ actived.label }}</h3>
+      <ul class="specific-category">
+        <li v-for="i in 24" :key="i">
+          <a href="#">
+            <img
+              style="box-sizing: border-box"
+              :src="'https://picsum.photos/300/200?random=' + actived.value + i"
+              :alt="actived.value + '-slide-' + i"
+            />
+          </a>
+        </li>
+      </ul>
+    </div> -->
+  </section>
+</main>

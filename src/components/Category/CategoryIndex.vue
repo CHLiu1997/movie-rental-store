@@ -33,7 +33,13 @@ const setup = () => {
     classic: ["經典", "Classic"],
     animation: ["動畫", "Animation"],
   });
-
+  // const cateList = reactive([
+  //   {
+  //     label: "恐怖",
+  //     value: "horror",
+  //     url: "/category/horror"
+  //   }
+  // ])
   const movieCatoriesTitle = ref([
     "科幻",
     "恐怖",

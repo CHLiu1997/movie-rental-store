@@ -1,8 +1,8 @@
-import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../components/Home/HomeIndex.vue";
-import CategoryView from "../components/Category/CategoryIndex.vue";
-import ContentView from "../components/Content/ContentIndex.vue";
-import LoginView from "../components/Login/LoginIndex.vue";
+import { createRouter, createWebHashHistory } from "vue-router";
+import HomeView from "../pages/Home/HomeIndex.vue";
+import CategoryView from "../pages/Category/CategoryIndex.vue";
+import ContentView from "../pages/Content/ContentIndex.vue";
+import LoginView from "../pages/Login/LoginIndex.vue";
 
 const routes = [
   {
@@ -28,7 +28,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(process.env.BASE_URL),
   routes,
 });
 export default router;

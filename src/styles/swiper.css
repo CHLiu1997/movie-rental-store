@@ -6,26 +6,26 @@
 .swiper-pagination .swiper-pagination-bullet-active {
   opacity: 1;
 }
-.categoty-box .swiper-button-prev::after,
-.categoty-box .swiper-button-next::after {
+.category .swiper-button-prev::after,
+.category .swiper-button-next::after {
   color: red;
   font-size: 36px;
   font-weight: bold;
 }
 @media screen and (max-width: 768px) {
-  .categoty-box .swiper-button-prev::after,
-  .categoty-box .swiper-button-next::after {
-    font-size: 24px;
+  .category .swiper-button-prev::after,
+  .category .swiper-button-next::after {
+    font-size: 20px;
   }
 }
 /* Content Page */
-.rec-swiper .swiper-button-prev::after,
-.rec-swiper .swiper-button-next::after {
+.recommend-swiper .swiper-button-prev::after,
+.recommend-swiper .swiper-button-next::after {
   font-weight: bold;
 }
 @media screen and (max-width: 768px) {
-  .rec-swiper .swiper-button-prev::after,
-  .rec-swiper .swiper-button-next::after {
-    font-size: 24px;
+  .recommend-swiper .swiper-button-prev::after,
+  .recommend-swiper .swiper-button-next::after {
+    font-size: 20px;
   }
 }

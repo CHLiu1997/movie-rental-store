@@ -1,0 +1,112 @@
+<main>
+  <section class="advert-bg">
+    <div class="advert">
+      <ul class="advert-title">
+        <h2 class="text-gradient">JUST WATCH</h2>
+        <p>精彩的電影</p>
+        <p>各式各樣的選擇</p>
+        <p>盡在&nbsp;JUST&nbsp;WATCH</p>
+      </ul>
+      <ul class="advert-price">
+        <li>
+          <p>
+            NT$&nbsp;188
+            <span>&#124;&nbsp;每月</span>
+          </p>
+          <a href="#">訂閱基本月費</a>
+        </li>
+        <li>
+          <p>
+            NT$&nbsp;1,888
+            <span>&#124;&nbsp;每年</span>
+          </p>
+          <span style="color: #f0f0f0">*馬上節省兩個月費用！</span>
+          <a href="#">訂閱超值年費</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section>
+    <ul class="popular-movie">
+      <h2>熱門電影</h2>
+      <li v-for="i in 9" :key="i">
+        <a href="#">
+          <img
+            :src="'https://picsum.photos/400/225?random=' + i"
+            :alt="'熱門電影' + i"
+          />
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2 class="subscirbe-title">訂閱即享</h2>
+    <ul class="subscirbe">
+      <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+        <img src="./img/movie.png" alt="movie-icon" />
+        <h3>豐富多樣的種類</h3>
+        <p>
+          提供最新且最齊全的電影，探索各式各樣的熱門影片，盡情享受強檔電影的樂趣。現在立即訂閱，一同深陷電影的魅力中。
+        </p>
+      </li>
+      <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+        <img src="./img/devices.png" alt="devices-icon" />
+        <h3>支援各種裝置</h3>
+        <p>
+          支援電視、電腦、平板及手機，在任何時間、地點，都能享受到電影的樂趣。
+        </p>
+      </li>
+      <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="700">
+        <img src="./img/share.png" alt="share-icon" />
+        <h3>分享更多的樂趣</h3>
+        <p>
+          最高設定&nbsp;6&nbsp;個不同帳戶，並且支援&nbsp;4&nbsp;個帳戶同時觀看，與家人、好友一同分享。
+        </p>
+      </li>
+      <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+        <img src="./img/advertisement.png" alt="advert-icon" />
+        <h3>遠離廣告的打擾</h3>
+        <p>在這裡，您將不再受到煩人的廣告打擾，可以完全陶醉在電影的世界中。</p>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2 class="device-title">適用裝置</h2>
+    <ul class="device">
+      <li>
+        <img class="img-200px" src="./img/tv.png" alt="電視" />
+        <h3>電視</h3>
+        <div class="device-detail">
+          <p>Apple TV</p>
+          <p>Android TV</p>
+          <p>Chromecast</p>
+        </div>
+      </li>
+      <li>
+        <img class="img-150px" src="./img/computer.png" alt="電腦" />
+        <h3>電腦</h3>
+        <div class="device-detail">
+          <p>Chorme 作業系統</p>
+          <p>Apple 作業系統</p>
+          <p>Windows 個人電腦</p>
+        </div>
+      </li>
+      <li>
+        <img class="img-100px" src="./img/tablet.png" alt="平板" />
+        <h3>平板</h3>
+        <div class="device-detail">
+          <p>Android 平板電腦</p>
+          <p>iPad</p>
+        </div>
+      </li>
+      <li>
+        <img class="img-100px" src="./img/phone.png" alt="手機" />
+        <h3>手機</h3>
+        <div class="device-detail">
+          <p>Android 系統</p>
+          <p>iOS 系統</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+</main>

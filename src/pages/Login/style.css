@@ -1,16 +1,11 @@
-.text-gradient {
-  color: transparent;
-  background: linear-gradient(135deg, #ae0000 25%, #b15bff);
-  background-clip: text;
-}
 /* Main */
-.main {
+.container {
   position: relative;
   height: 900px;
   background-image: url("https://picsum.photos/id/160/1440/900");
   background-size: cover;
 }
-.login-box {
+.member {
   position: absolute;
   right: 5%;
   top: 0%;
@@ -22,30 +17,30 @@
   background-color: rgba(39, 39, 39, 0.7);
 }
 @media screen and (max-width: 768px) {
-  .main {
+  .container {
     position: static;
     background-image: none;
   }
-  .login-box {
+  .member {
     position: static;
     width: 100vw;
     background-color: transparent;
   }
 }
-.login-box h1 {
+.member h1 {
   font-size: 60px;
   font-weight: bold;
   margin-top: 2rem;
 }
-.login-box img {
+.member img {
   margin: 2rem 0;
 }
-.login-box h2 {
+.member h2 {
   font-size: 36px;
   color: #f0f0f0;
   margin-bottom: 4rem;
 }
-.login-box label {
+.member label {
   width: 70%;
   text-align: left;
   color: #f0f0f0;

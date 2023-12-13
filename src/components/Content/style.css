@@ -529,23 +529,3 @@
 .rec-slide img {
   width: 100%;
 }
-/* Footer */
-.footer {
-  display: flex;
-  flex-direction: column;
-  color: #f0f0f0;
-  border-top: 1px solid #f0f0f0;
-}
-.community {
-  display: flex;
-  justify-content: center;
-  padding: 20px 0 5px 0;
-}
-.community-btn {
-  height: 20px;
-  padding: 0px 10px 0 10px;
-}
-.copyright {
-  line-height: 2;
-  padding-bottom: 10px;
-}

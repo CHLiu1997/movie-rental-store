@@ -1,14 +1,27 @@
-<script>
-import "reset.css";
-
-export default {};
-</script>
 <template>
-  <!-- <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav> -->
-  <router-view />
+  <div class="loading-box" v-if="loading">
+    <AppLoading />
+  </div>
+  <div v-else>
+    <GoTop />
+    <AppHeader />
+    <RouterView />
+    <AppFooter />
+  </div>
 </template>
 
+<script setup>
+import "reset.css";
+import AppLoading from "@/components/AppLoading.vue";
+import AppHeader from "@/components/AppHeader.vue";
+import GoTop from "@/components/GoTop.vue";
+import AppFooter from "@/components/AppFooter.vue";
+import { onMounted, ref } from "vue";
+onMounted(() => {
+  setTimeout(() => {
+    loading.value = false;
+  }, 2000);
+});
+const loading = ref(true);
+</script>
 <style src="@/styles/index.css" />

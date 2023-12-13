@@ -1,0 +1,245 @@
+/* Advert */
+.advert-bg {
+  position: relative;
+  height: 800px;
+  background-color: rgba(0, 0, 0, 0.65);
+  background-image: url("https://picsum.photos/1920/800?random=1");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: multiply;
+}
+.advert {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 5%;
+  top: 15%;
+}
+.advert-title h2 {
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+.advert-title p {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: left;
+  line-height: 1.5;
+  color: #f0f0f0;
+}
+.advert-price {
+  display: flex;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 1rem;
+  margin-top: 2rem;
+}
+.advert-price li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: self-start;
+  margin-right: 1rem;
+}
+.advert-price li p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f0f0f0;
+  margin-bottom: 1rem;
+}
+.advert-price li p span {
+  font-size: 1.2rem;
+  color: #d0d0d0;
+  margin-left: 0.8rem;
+}
+.advert-price li a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #f0f0f0;
+  border-radius: 5px;
+  background-color: #930000;
+  padding: 1.5rem 5rem;
+  margin-top: 1.5rem;
+  transition: 0.1s;
+}
+.advert-price li a:hover {
+  background-color: #ae0000;
+}
+/* Advert for mobile */
+@media screen and (max-width: 768px) {
+  .advert {
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+  }
+  .advert-title h2 {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+  .advert-title p {
+    font-size: 2rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .advert-price {
+    flex-direction: column;
+    border: none;
+    white-space: nowrap;
+  }
+  .advert-price li {
+    justify-content: center;
+    align-items: center;
+    margin-right: 0px;
+  }
+  .advert-price li p {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .advert-price li p span {
+    font-size: 1rem;
+    margin-left: 0px;
+  }
+  .advert-price li a {
+    margin: 1rem 0 1.5rem 0;
+  }
+}
+/* Popular-movie */
+.popular-movie {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.popular-movie h2 {
+  width: 100%;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f0f0f0;
+  margin: 10rem 0 1rem 0;
+}
+.popular-movie li img {
+  margin: 1rem;
+  border-radius: 5px;
+}
+/* Popular-movie for mobile */
+@media screen and (max-width: 1024px) {
+  .popular-movie li img {
+    margin: 0.5rem;
+    width: 45vw;
+  }
+}
+/* Subscirbe */
+.subscirbe-title {
+  width: 100%;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f0f0f0;
+  margin: 10rem 0 1rem 0;
+}
+.subscirbe {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 5rem 3rem 5rem;
+  color: #f0f0f0;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  background: linear-gradient(
+    135deg,
+    rgba(174, 0, 0, 0.7) 25%,
+    rgba(177, 91, 255, 0.7)
+  );
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px 3px rgba(255, 255, 255, 0.2);
+}
+.subscirbe li {
+  text-align: left;
+  width: 20%;
+  margin: 0 1rem;
+}
+.subscirbe li img {
+  border: 1px solid #f0f0f0;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+.subscirbe li h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 2rem 0 1.5rem 0;
+}
+.subscirbe li p {
+  height: 10rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+/* Subscirbe for mobile*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .subscirbe li p {
+    height: 15rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .subscirbe {
+    flex-direction: column;
+    margin: 2rem 2rem 3rem 2rem;
+  }
+  .subscirbe li {
+    text-align: left;
+    width: 80%;
+    margin: 0;
+  }
+  .subscirbe li img {
+    margin-top: 1rem;
+  }
+  .subscirbe li p {
+    height: auto;
+    margin-bottom: 1rem;
+  }
+}
+/* Device */
+.device-title {
+  width: 100%;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f0f0f0;
+  margin: 10rem 0 1rem 0;
+}
+.device {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #f0f0f0;
+  margin-bottom: 4rem;
+}
+.img-200px {
+  height: 200px;
+  width: 200px;
+}
+.img-150px {
+  height: 150px;
+  width: 150px;
+  padding: 25px;
+}
+.img-100px {
+  height: 100px;
+  width: 100px;
+  padding: 50px;
+}
+.device li h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+.device-detail {
+  height: 6rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+/* Device-box for mobile*/
+@media screen and (max-width: 1024px) {
+  .device li {
+    width: 48vw;
+  }
+}
