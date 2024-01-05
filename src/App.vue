@@ -1,5 +1,5 @@
 <template>
-  <div class="loading-box" v-if="loading">
+  <div class="loading-box" v-if="state.loading">
     <AppLoading />
   </div>
   <div v-else>
@@ -16,12 +16,6 @@ import AppLoading from "@/components/AppLoading.vue";
 import AppHeader from "@/components/AppHeader.vue";
 import GoTop from "@/components/GoTop.vue";
 import AppFooter from "@/components/AppFooter.vue";
-import { onMounted, ref } from "vue";
-onMounted(() => {
-  setTimeout(() => {
-    loading.value = false;
-  }, 2000);
-});
-const loading = ref(true);
+import { state } from "./state";
 </script>
 <style src="@/styles/index.css" />

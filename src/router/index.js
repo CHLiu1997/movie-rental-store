@@ -4,6 +4,8 @@ import CategoryView from "../pages/Category/CategoryIndex.vue";
 import ContentView from "../pages/Content/ContentIndex.vue";
 import LoginView from "../pages/Login/LoginIndex.vue";
 
+import { state } from "../state";
+
 const routes = [
   {
     path: "/",
@@ -31,4 +33,12 @@ const router = createRouter({
   history: createWebHashHistory(process.env.BASE_URL),
   routes,
 });
+
+router.beforeEach(() => {
+  if (!state.loading) state.setLoading(true);
+  setTimeout(() => {
+    state.setLoading(false);
+  }, 1500);
+});
+
 export default router;

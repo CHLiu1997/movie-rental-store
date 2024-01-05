@@ -1,5 +1,5 @@
 /* Main */
-.container {
+.login-box {
   position: relative;
   height: 900px;
   background-image: url("https://picsum.photos/id/160/1440/900");
@@ -17,7 +17,7 @@
   background-color: rgba(39, 39, 39, 0.7);
 }
 @media screen and (max-width: 768px) {
-  .container {
+  .login-box {
     position: static;
     background-image: none;
   }
