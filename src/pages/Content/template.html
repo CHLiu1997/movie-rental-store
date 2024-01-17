@@ -1,6 +1,6 @@
 <main>
-  <a class="prev" href="http://localhost:8080/category"
-    ><img src="./img/arrow-left.png" alt="" /><span>返回列表</span></a
+  <router-link to="/category" class="prev"
+    ><img src="./img/arrow-left.png" alt="" /><span>返回列表</span></router-link
   >
   <section class="overview">
     <div class="info">
@@ -38,7 +38,7 @@
     <div class="trailer">
       <div class="trailer-title">
         <img src="./img/arrow-right.png" />
-        <h2>搶先觀賞</h2>
+        <h2>立即觀賞</h2>
       </div>
       <div class="trailer-video">
         <iframe
@@ -81,10 +81,10 @@
           }"
     >
       <swiper-slide v-for="i in 8" :key="i"
-        ><a class="recommend-slide" href="#"
-          ><img
+        ><router-link :to="'/content/' + i" class="recommend-slide">
+          <img
             :src="'https://picsum.photos/500/300?random=' + i"
-            :alt="'slide-' + i" /></a
+            :alt="'slide-' + i" /></router-link
       ></swiper-slide>
     </swiper>
   </section>

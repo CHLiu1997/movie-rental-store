@@ -1,0 +1,23 @@
+<ul class="category">
+  <li v-for="item in AllCategory" :key="item.value">
+    <h3>{{ item.label }}</h3>
+    <swiper
+      :modules="modules"
+      :space-between="5"
+      :slides-per-view="4"
+      :slides-per-group="1"
+      :loop="true"
+      :loop-fill-group-with-blank="true"
+      :navigation="true"
+    >
+      <swiper-slide v-for="i in 8" :key="i">
+        <router-link to="/content" class="category-slide">
+          <img
+            :src="'https://picsum.photos/300/200?random=' + item.value + i"
+            :alt="item.value + '-slide-' + i"
+          />
+        </router-link>
+      </swiper-slide>
+    </swiper>
+  </li>
+</ul>

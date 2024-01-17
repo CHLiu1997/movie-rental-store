@@ -1,16 +1,23 @@
 import { reactive } from "vue";
 
-const initialState = {
+export const state = reactive({
   loading: true,
-};
-
-const actions = {
   setLoading(status) {
     this.loading = status;
   },
-};
-
-export const state = reactive({
-  ...initialState,
-  ...actions,
 });
+
+// const initialState = {
+//   loading: true,
+// };
+
+// const actions = {
+//   setLoading(status) {
+//     this.loading = status;
+//   },
+// };
+
+// export const state = reactive({
+//   ...initialState,
+//   ...actions,
+// });

@@ -38,13 +38,34 @@
 .member h2 {
   font-size: 36px;
   color: #f0f0f0;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 .member label {
   width: 70%;
   text-align: left;
   color: #f0f0f0;
   margin-bottom: 0.5rem;
+}
+.member form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.member form input,
+.member form label {
+  width: 20rem;
+}
+@media screen and (max-width: 1024px) {
+  .member form input,
+  .member form label {
+    width: 12rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .member form input,
+  .member form label {
+    width: 20rem;
+  }
 }
 .inputtext {
   width: 70%;
@@ -55,7 +76,6 @@
   margin-bottom: 1rem;
 }
 .confirm {
-  width: 30%;
   font-size: 20px;
   font-weight: bold;
   color: #f0f0f0;
@@ -77,6 +97,7 @@
   border: none;
   cursor: pointer;
   background-color: transparent;
+  text-decoration: none;
 }
 .switch:hover {
   text-decoration: underline;

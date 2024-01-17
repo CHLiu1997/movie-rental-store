@@ -1,32 +1,75 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import HomeView from "../pages/Home/HomeIndex.vue";
-import CategoryView from "../pages/Category/CategoryIndex.vue";
-import ContentView from "../pages/Content/ContentIndex.vue";
-import LoginView from "../pages/Login/LoginIndex.vue";
-
-import { state } from "../state";
+import Home from "../pages/Home/HomePage.vue";
+import Category from "../pages/Category/CategoryPage.vue";
+import All from "../pages/Category/AllCategory/AllCategory.vue";
+import Specific from "../pages/Category/SpecificCategory/SpecificCategory.vue";
+import Content from "../pages/Content/ContentPage.vue";
+import Login from "../pages/Login/LoginPage.vue";
+import LoginPart from "../pages/Login/LoginPart.vue";
+import RegisterPart from "../pages/Login/RegisterPart.vue";
+import Subscribe from "../pages/Subscribe/SubscribePage.vue";
+import { state } from "../state/index.js";
 
 const routes = [
   {
     path: "/",
     name: "home",
-    component: HomeView,
+    component: Home,
   },
   {
     path: "/category",
     name: "category",
-    component: CategoryView,
+    component: Category,
+    children: [
+      {
+        path: "",
+        name: "allCategory",
+        component: All,
+      },
+      {
+        path: ":activedUrl",
+        name: "specificCategory",
+        component: Specific,
+      },
+    ],
   },
   {
     path: "/content",
     name: "content",
-    component: ContentView,
+    component: Content,
+    children: [
+      {
+        path: ":id",
+        component: Content,
+      },
+    ],
   },
   {
     path: "/login",
     name: "login",
-    component: LoginView,
+    component: Login,
+    children: [
+      {
+        path: "",
+        name: "loginPart",
+        component: LoginPart,
+      },
+      {
+        path: "register",
+        name: "registerPart",
+        component: RegisterPart,
+      },
+    ],
   },
+  {
+    path: "/subscribe",
+    name: "subscribe",
+    component: Subscribe,
+  },
+  // {
+  //   path: "/:pathMatch(.*)*",
+  //   component: Home,
+  // },
 ];
 
 const router = createRouter({
@@ -36,9 +79,10 @@ const router = createRouter({
 
 router.beforeEach(() => {
   if (!state.loading) state.setLoading(true);
+  console.log("state", state);
   setTimeout(() => {
     state.setLoading(false);
-  }, 1500);
+  }, 1000);
 });
 
 export default router;

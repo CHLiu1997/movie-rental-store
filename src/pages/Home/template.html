@@ -13,7 +13,7 @@
             NT$&nbsp;188
             <span>&#124;&nbsp;每月</span>
           </p>
-          <a href="#">訂閱基本月費</a>
+          <router-link to="/subscirbe">訂閱基本月費</router-link>
         </li>
         <li>
           <p>
@@ -21,7 +21,7 @@
             <span>&#124;&nbsp;每年</span>
           </p>
           <span style="color: #f0f0f0">*馬上節省兩個月費用！</span>
-          <a href="#">訂閱超值年費</a>
+          <router-link to="/subscirbe">訂閱超值年費</router-link>
         </li>
       </ul>
     </div>
@@ -29,13 +29,13 @@
   <section>
     <ul class="popular-movie">
       <h2>熱門電影</h2>
-      <li v-for="i in 9" :key="i">
-        <a href="#">
+      <li v-for="i in 12" :key="i">
+        <router-link to="/content">
           <img
             :src="'https://picsum.photos/400/225?random=' + i"
             :alt="'熱門電影' + i"
           />
-        </a>
+        </router-link>
       </li>
     </ul>
   </section>
