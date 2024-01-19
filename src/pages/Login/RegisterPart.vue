@@ -21,7 +21,7 @@
     <label for="password">密碼</label>
     <input
       class="inputtext"
-      type="new-password"
+      type="password"
       name="new-password"
       id="new-password"
       placeholder="請輸入您的密碼"
@@ -37,6 +37,6 @@
       autocomplete="new-password"
     />
     <input class="confirm" type="button" value="註冊" />
-    <router-link to="/login" class="switch">登入</router-link>
+    <router-link to="/login" class="switch">會員登入</router-link>
   </form>
 </template>

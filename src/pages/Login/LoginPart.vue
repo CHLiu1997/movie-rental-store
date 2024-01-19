@@ -19,5 +19,5 @@
     />
     <input class="confirm" type="button" value="登入" />
   </form>
-  <router-link to="/login/register" class="switch">註冊</router-link>
+  <router-link to="/login/register" class="switch">註冊會員</router-link>
 </template>

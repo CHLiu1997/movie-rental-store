@@ -45,6 +45,11 @@ const routes = [
     ],
   },
   {
+    path: "/subscribe",
+    name: "subscribe",
+    component: Subscribe,
+  },
+  {
     path: "/login",
     name: "login",
     component: Login,
@@ -60,11 +65,6 @@ const routes = [
         component: RegisterPart,
       },
     ],
-  },
-  {
-    path: "/subscribe",
-    name: "subscribe",
-    component: Subscribe,
   },
   // {
   //   path: "/:pathMatch(.*)*",
