@@ -79,7 +79,6 @@ const router = createRouter({
 
 router.beforeEach(() => {
   if (!state.loading) state.setLoading(true);
-  console.log("state", state);
   setTimeout(() => {
     state.setLoading(false);
   }, 1000);

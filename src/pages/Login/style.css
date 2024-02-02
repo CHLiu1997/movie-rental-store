@@ -1,5 +1,5 @@
 /* Main */
-.login-box {
+.login-main {
   position: relative;
   height: 900px;
   background-image: url("https://picsum.photos/id/160/1440/900");
@@ -17,7 +17,7 @@
   background-color: rgba(39, 39, 39, 0.7);
 }
 @media screen and (max-width: 768px) {
-  .login-box {
+  .login-main {
     position: static;
     background-image: none;
   }
@@ -28,9 +28,14 @@
   }
 }
 .member h1 {
-  font-size: 60px;
+  font-size: 4rem;
   font-weight: bold;
   margin-top: 2rem;
+}
+@media screen and (max-width: 1024px) {
+  .member h1 {
+    font-size: 3.5rem;
+  }
 }
 .member img {
   margin: 2rem 0;
@@ -67,7 +72,7 @@
     width: 20rem;
   }
 }
-.inputtext {
+form input {
   width: 70%;
   font-size: 16px;
   border: none;
@@ -76,6 +81,7 @@
   margin-bottom: 1rem;
 }
 .confirm {
+  width: 80%;
   font-size: 20px;
   font-weight: bold;
   color: #f0f0f0;
