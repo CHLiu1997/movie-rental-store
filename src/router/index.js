@@ -5,8 +5,8 @@ import All from "../pages/Category/AllCategory/AllCategory.vue";
 import Specific from "../pages/Category/SpecificCategory/SpecificCategory.vue";
 import Content from "../pages/Content/ContentPage.vue";
 import Login from "../pages/Login/LoginPage.vue";
-import LoginPart from "../pages/Login/LoginPart.vue";
-import RegisterPart from "../pages/Login/RegisterPart.vue";
+import LoginPart from "../pages/Login/LoginPart/LoginPart.vue";
+import RegisterPart from "../pages/Login/RegisterPart/RegisterPart.vue";
 import Subscribe from "../pages/Subscribe/SubscribePage.vue";
 import { state } from "../state/index.js";
 
@@ -66,10 +66,10 @@ const routes = [
       },
     ],
   },
-  // {
-  //   path: "/:pathMatch(.*)*",
-  //   component: Home,
-  // },
+  {
+    path: "/:pathMatch(.*)*",
+    component: Home,
+  },
 ];
 
 const router = createRouter({

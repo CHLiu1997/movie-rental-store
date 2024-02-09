@@ -1,0 +1,43 @@
+<h2>註冊會員</h2>
+<form class="register-form">
+  <label for="name">暱稱</label>
+  <input
+    v-model="name"
+    type="text"
+    name="name"
+    id="name"
+    placeholder="請輸入您的暱稱"
+    autocomplete="on"
+  />
+  <label for="email">帳號/電子郵件</label>
+  <input
+    v-model="email"
+    type="email"
+    name="email"
+    id="email"
+    placeholder="請輸入電子郵件"
+    autocomplete="on"
+  />
+  <label for="password">密碼</label>
+  <input
+    v-model="password"
+    type="password"
+    name="password"
+    id="password"
+    placeholder="請輸入您的密碼"
+    autocomplete="off"
+  />
+  <label for="verify">確認密碼</label>
+  <input
+    v-model="verify"
+    type="password"
+    name="verify"
+    id="verify"
+    placeholder="請再次輸入您的密碼"
+    autocomplete="off"
+  />
+  <button class="confirm" type="submit" @click.prevent="registerHandler">
+    註冊
+  </button>
+  <router-link to="/login" class="switch">會員登入</router-link>
+</form>
